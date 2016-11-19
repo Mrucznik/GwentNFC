@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Edytor_kart"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Kreator kart do Gwinta" Height="259.985" Width="309.985">
     <Grid>
-        
+        <DockPanel Margin="10">
+            <StackPanel DockPanel.Dock="Right" Margin="10,0,0,0">
+                <Button Name="AddCard" Click="AddCard_Click">Dodaj kartę</Button>
+                <Button Name="CardInfo" Margin="0,5,0,0" Click="CardInfo_Click">Więcej info</Button>
+                <Button Name="ChangeCard" Margin="0,5" Click="ChangeCard_Click">Edytuj kartę</Button>
+                <Button Name="DeleteCard" Click="DeleteCard_Click">Usuń kartę</Button>
+            </StackPanel>
+            <ListBox Name="LbCards" DisplayMemberPath="FullName"></ListBox>
+        </DockPanel>
     </Grid>
 </Window>
