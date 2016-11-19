@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Edytor_kart"
         mc:Ignorable="d"
-        Title="EditWindow" Height="300" Width="300">
+        Title="Kreator kart do Gwinta - Edycja karty" Height="270" Width="300">
     <Grid>
-        
+        <StackPanel Margin="10">
+            <TextBlock x:Name="Header" HorizontalAlignment="Left" Margin="10,5" TextWrapping="Wrap" Text="Geralt z Rivii" VerticalAlignment="Top" FontSize="18"/>
+
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="_Nazwa:" Target="{Binding ElementName=TbCardName}" />
+                <Label Grid.Row="1" Grid.Column="0" Content="_Siła:" Target="{Binding ElementName=TbCardStrength}" />
+                <Label Grid.Row="2" Grid.Column="0" Content="_Rząd:" Target="{Binding ElementName=CbCardRow}" />
+                <Label Grid.Row="3" Grid.Column="0" Content="_Efekt:" Target="{Binding ElementName=CbCardEffect}" />
+                <Label Grid.Row="4" Grid.Column="0" Content="_Złota:" Target="{Binding ElementName=ChbCardGoldness}" />
+                <TextBox Grid.Row="0" Grid.Column="1" Name="TbCardName" Margin="5"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Name="TbCardStrength" Margin="5"/>
+                <ComboBox Grid.Row="2" Grid.Column="1" Name="CbCardRow" Margin="5"></ComboBox>
+                <ComboBox Grid.Row="3" Grid.Column="1" Name="CbCardEffect" Margin="5"></ComboBox>
+                <CheckBox Grid.Row="4" Grid.Column="1" Name="ChbCardGoldness" Margin="5"/>
+            </Grid>
+            <Button Name="SaveButton" Content="Zapisz" Width="80" Margin="10" Click="SaveButton_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

@@ -13,6 +13,8 @@
                 <Button Name="CardInfo" Margin="0,5,0,0" Click="CardInfo_Click">Więcej info</Button>
                 <Button Name="ChangeCard" Margin="0,5" Click="ChangeCard_Click">Edytuj kartę</Button>
                 <Button Name="DeleteCard" Click="DeleteCard_Click">Usuń kartę</Button>
+                <TextBlock Margin="0,5,0,0" HorizontalAlignment="Center">Auto Edit</TextBlock>
+                <CheckBox Name="Autoedit" HorizontalAlignment="Center"></CheckBox>
             </StackPanel>
             <ListBox Name="LbCards" DisplayMemberPath="FullName"></ListBox>
         </DockPanel>
