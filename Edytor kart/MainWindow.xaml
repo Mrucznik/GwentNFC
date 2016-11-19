@@ -15,6 +15,7 @@
                 <Button Name="DeleteCard" Click="DeleteCard_Click">Usuń kartę</Button>
                 <TextBlock Margin="0,5,0,0" HorizontalAlignment="Center">Auto Edit</TextBlock>
                 <CheckBox Name="Autoedit" HorizontalAlignment="Center"></CheckBox>
+                <Button Name="SaveButton" Content="Zapisz" Margin="0, 10" Click="SaveButton_Click"></Button>
             </StackPanel>
             <ListBox Name="LbCards" DisplayMemberPath="FullName"></ListBox>
         </DockPanel>

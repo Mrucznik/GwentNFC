@@ -10,8 +10,6 @@ using System.Xml.Serialization;
 
 namespace Edytor_kart
 {
-
-
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -27,8 +25,6 @@ namespace Edytor_kart
             InitializeComponent();
 
             DeserializeData();
-            /*cards.Add(new Card("Geralt z Rivii", 15));
-            cards.Add(new Card("Cirilla z Cintry", 15));*/
 
             LbCards.ItemsSource = cards;
         }
@@ -42,18 +38,36 @@ namespace Edytor_kart
 
         private void SerializeData()
         {
-            XmlSerializer serializer = new XmlSerializer(cards.GetType());
-            TextWriter textWriter = new StreamWriter("cards.xml");
-            serializer.Serialize(textWriter, cards);
-            textWriter.Close();
+            try
+            {
+                XmlSerializer serializer = new XmlSerializer(cards.GetType());
+                using (TextWriter textWriter = new StreamWriter("cards.xml"))
+                {
+                    serializer.Serialize(textWriter, cards);
+                    textWriter.Close();
+                }
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
         }
 
         private void DeserializeData()
         {
-            XmlSerializer serializer = new XmlSerializer(cards.GetType());
-            TextReader textReader = new StreamReader("cards.xml");
-            cards = (ObservableCollection<Card>)serializer.Deserialize(textReader);
-            textReader.Close();
+            try
+            {
+                XmlSerializer serializer = new XmlSerializer(cards.GetType());
+                using (TextReader textReader = new StreamReader("cards.xml"))
+                {
+                    cards = (ObservableCollection<Card>)serializer.Deserialize(textReader);
+                    textReader.Close();
+                }
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
         }
 
         private void AddCard_Click(object sender, RoutedEventArgs e)
@@ -97,6 +111,11 @@ namespace Edytor_kart
         {
             EditWindow window = new EditWindow(card);
             window.Show();
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            SerializeData();
         }
     }
 }
