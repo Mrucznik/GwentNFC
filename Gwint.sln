@@ -23,9 +23,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GwintCrossPlatform.Windows"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		GwintCrossPlatform\GwintCrossPlatform\GwintCrossPlatform.projitems*{058013b0-ab23-4ef5-b1cb-da1e26e9ef56}*SharedItemsImports = 4
 		GwintCrossPlatform\GwintCrossPlatform\GwintCrossPlatform.projitems*{07b67359-fa96-465c-a6fe-100aedcb2611}*SharedItemsImports = 13
+		GwintCrossPlatform\GwintCrossPlatform\GwintCrossPlatform.projitems*{1d6c0585-f234-4758-9317-e95039136fd2}*SharedItemsImports = 4
 		GwintCrossPlatform\GwintCrossPlatform\GwintCrossPlatform.projitems*{53c51d49-762e-4d28-893c-ee2c328331a0}*SharedItemsImports = 4
 		GwintCrossPlatform\GwintCrossPlatform\GwintCrossPlatform.projitems*{9bd455e8-6dab-4316-a374-4e09c63eb246}*SharedItemsImports = 4
+		GwintCrossPlatform\GwintCrossPlatform\GwintCrossPlatform.projitems*{e47a9855-de26-4b04-ba22-b694642520b4}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

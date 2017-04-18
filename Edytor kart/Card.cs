@@ -5,9 +5,12 @@ namespace Edytor_kart
 {
     public enum CardRow
     {
+        None,
+        King,
         CloseCombat,
         LognRange,
-        Siege
+        Siege,
+        All
     }
 
     public enum CardEffect
@@ -15,19 +18,28 @@ namespace Edytor_kart
         None,
         RogDowodcy,
         Pozoga,
-        ManekinDoCwiczen,
-        TrzaskajacyMroz,
-        GestaMgla,
-        UlewnyDeszcz,
-        CzysteNiebo,
+        Manekin,
+        Mroz,
+        Mgla, //FlotestKrol
+        Deszcz, //EmhyrJez
+        CzysteNiebo, //FoltestDowodca
         Braterstwo,
-        Szpiegostwo,
+        Szpieg,
         Zrecznosc,
-        Zmartwychwstanie,
+        Medyk,
         Wiez,
         WysokieMorale,
         PozogaSmoka,
-        RogJaskra
+        RogJaskra,
+        //foltesty
+        FoltestWladca,
+        FoltestZdobywca,
+        FlotestSyn,
+        //emhyry
+        EmhyrNajezdzca,
+        EmhyrPlomien,
+        EmhyrPan,
+        EmhyrCesarz
     }
 
     public class Card : INotifyPropertyChanged
@@ -91,6 +103,11 @@ namespace Edytor_kart
         public void Save(FileStream stream)
         {
 
+        }
+
+        public string generateSqlInsertQuery()
+        {
+            return $"INSERT INTO `cards` (`title`, `strength`, `row`, `golden`, `cardEffect`) VALUES ('{_name}', '{_strength}', '{Row}', '{(Golden?1:0)}', '{Effect}');";
         }
     }
 }

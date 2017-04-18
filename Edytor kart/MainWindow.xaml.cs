@@ -46,6 +46,14 @@ namespace Edytor_kart
                     serializer.Serialize(textWriter, cards);
                     textWriter.Close();
                 }
+                using (TextWriter textWriter = new StreamWriter("cards.sql"))
+                {
+                    foreach(Card card in cards)
+                    {
+                        textWriter.WriteLine(card.generateSqlInsertQuery());
+                    }
+                    textWriter.Close();
+                }
             }
             catch (Exception)
             {
