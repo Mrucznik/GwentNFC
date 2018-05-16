@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Edytor_kart"
         mc:Ignorable="d"
-        Title="Kreator kart do Gwinta - Edycja karty" Height="270" Width="300">
+        Title="Kreator kart do Gwinta - Edycja karty" Height="328.314" Width="300">
     <Grid>
         <StackPanel Margin="10">
             <TextBlock x:Name="Header" HorizontalAlignment="Left" Margin="10,5" TextWrapping="Wrap" Text="Geralt z Rivii" VerticalAlignment="Top" FontSize="18"/>
